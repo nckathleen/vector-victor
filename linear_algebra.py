@@ -17,3 +17,7 @@ def vector_add(w, y):
     Matrix + Matrix = Matrix
     """
     return [w[i] + y[i] for i in range(len(w))]
+
+
+def vector_sub(v, w):
+    return [w[i] - y[i] for i in range(len(w))]
