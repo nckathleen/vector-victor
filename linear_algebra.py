@@ -8,3 +8,12 @@ def shape(vector_list):
     (for a matrix.)"""
     shape = len(vector_list)
     return (shape,)
+
+
+def vector_add(w, y):
+    """
+    [a b]  + [c d]  = [a+c b+d]
+
+    Matrix + Matrix = Matrix
+    """
+    return [w[i] + y[i] for i in range(len(w))]
