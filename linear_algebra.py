@@ -42,8 +42,8 @@ def dot(w, y):
     dot(Vector, Vector) = Scalar
     """
 
-    #  sum([i*j for (i, j) in zip(list1, list2)])
-
+    if len(w) != len(y):
+        raise ShapeException('Vectors must be the same size.')
     return sum([w[i] * y[i] for i in range(len(w))])
 
 
