@@ -16,6 +16,10 @@ def vector_add(w, y):
 
     Matrix + Matrix = Matrix
     """
+    """Shape rule: the vectors must be the same size."""
+
+    if len(w) != len(y):
+        raise ShapeException('Vectors must be the same size.')
     return [w[i] + y[i] for i in range(len(w))]
 
 
