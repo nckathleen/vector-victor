@@ -24,4 +24,28 @@ def vector_add(w, y):
 
 
 def vector_sub(v, w):
-    return [w[i] - y[i] for i in range(len(w))]
+    if len(v) != len(w):
+        raise ShapeException('Vectors must be the same size.')
+    return [v[i] - w[i] for i in range(len(v))]
+
+#
+# def vector_sum(*args):
+#     """vector_sum can take any number of vectors and add them together."""
+#
+#     return [arg1[i] + arg2[i] for i in range(len(arg1))]
+#
+
+def dot(w, y):
+    """
+    dot([a b], [c d])   = a * c + b * d
+
+    dot(Vector, Vector) = Scalar
+    """
+
+    #  sum([i*j for (i, j) in zip(list1, list2)])
+
+    return sum([w[i] * y[i] for i in range(len(w))])
+
+
+    #  for n in range(len(newmat)):
+    #       new_sum += newmat[n]
