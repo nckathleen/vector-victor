@@ -38,6 +38,7 @@ def test_vector_add():
     assert vector_add(u, z) == u
 
 
+<<<<<<< HEAD
 # def test_vector_add_is_commutative():
 #     assert vector_add(w, y) == vector_add(y, w)
 #
