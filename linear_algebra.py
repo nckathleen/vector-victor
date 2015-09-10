@@ -47,5 +47,11 @@ def dot(w, y):
     return sum([w[i] * y[i] for i in range(len(w))])
 
 
-    #  for n in range(len(newmat)):
-    #       new_sum += newmat[n]
+def vector_multiply(v, s):
+    """
+    [a b]  *  Z     = [a*Z b*Z]
+
+    Vector * Scalar = Vector
+    """
+
+    return (v[1] * s) (v[2] * s)
