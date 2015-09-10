@@ -6,6 +6,7 @@ def shape(vector_list):
     """shape should take a vector or matrix and return a tuple with the
     number of rows (for a vector) or the number of rows and columns
     (for a matrix.)"""
+
     shape = len(vector_list)
     return (shape,)
 
@@ -54,4 +55,14 @@ def vector_multiply(v, s):
     Vector * Scalar = Vector
     """
 
-    return (v[1] * s) (v[2] * s)
+    return [s * i for i in v]
+
+
+def vector_mean(m, n):
+    """
+    mean([a b], [c d]) = [mean(a, c) mean(b, d)]
+
+    mean(Vector)       = Vector
+    """
+
+    return mean([m[i] * n[i] for i in range(len(m))])
