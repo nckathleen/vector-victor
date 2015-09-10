@@ -19,7 +19,7 @@ def vector_add(w, y):
     Matrix + Matrix = Matrix
     """
     """Shape rule: the vectors must be the same size."""
-
+# Could use shape function from above in this one.
     if len(w) != len(y):
         raise ShapeException('Vectors must be the same size.')
     return [w[i] + y[i] for i in range(len(w))]
@@ -70,7 +70,7 @@ def vector_mean(*args):
 
     mean(Vector)       = Vector
     """
-
+#  Also could use vector_multiply from above in this one.
     return [i/len(args) for i in vector_sum(*args)]
 
 
