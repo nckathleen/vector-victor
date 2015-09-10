@@ -71,7 +71,7 @@ def vector_mean(*args):
     mean(Vector)       = Vector
     """
 
-    return ([m[i] * n[i] for i in range(len(m))])
+    return [i/len(args) for i in vector_sum(*args)]
 
 
 def magnitude(m):
