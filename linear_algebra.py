@@ -1,3 +1,4 @@
+import math
 
 class ShapeException(Exception):
     pass
@@ -29,12 +30,17 @@ def vector_sub(v, w):
         raise ShapeException('Vectors must be the same size.')
     return [v[i] - w[i] for i in range(len(v))]
 
-#
-# def vector_sum(*args):
-#     """vector_sum can take any number of vectors and add them together."""
-#
-#     return [arg1[i] + arg2[i] for i in range(len(arg1))]
-#
+
+def vector_sum(*args):
+    """vector_sum can take any number of vectors and add them together."""
+
+    if len(args[0]) != len(args[1]):
+        raise ShapeException('Vectors must be the same size.')
+    total = [0] * len(args[0])
+    for i in args:
+        total = vector_add(total,i)
+    return total
+
 
 def dot(w, y):
     """
@@ -58,11 +64,22 @@ def vector_multiply(v, s):
     return [s * i for i in v]
 
 
-def vector_mean(m, n):
+def vector_mean(*args):
     """
     mean([a b], [c d]) = [mean(a, c) mean(b, d)]
 
     mean(Vector)       = Vector
     """
 
-    return mean([m[i] * n[i] for i in range(len(m))])
+    return ([m[i] * n[i] for i in range(len(m))])
+
+
+def magnitude(m):
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+
+    magnitude(Vector) = Scalar
+    """
+
+    magnitude = math.sqrt(sum([x**2 for x in m]))
+    return magnitude
